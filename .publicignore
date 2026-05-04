@@ -1,0 +1,17 @@
+# Private/local material never copied into a public release snapshot.
+.git
+.env
+.env.*
+!.env.example
+!.env.release.example
+node_modules
+.idea
+*.iml
+*.log
+.DS_Store
+final_verification_logs.txt
+archive
+PM
+todo.md
+test-uni-v4-estimate.js
+.eslintrc.json

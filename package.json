@@ -1,0 +1,44 @@
+{
+  "name": "dex-bot-services",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start ecosystem.config.js --update-env && pm2 save",
+    "start:uni-v4": "pm2 delete uni-v4 || true; pm2 start src/uni-v4.js --name uni-v4 --node-args=\"--require ./ethers-compat.js\" && pm2 save",
+    "start:pancake": "node src/pancake.js",
+    "start:pancake-v3": "node src/pancake-v3.js",
+    "start:pancake-v4": "NODE_OPTIONS='--require ./ethers-compat.js' node src/pancake-v4.js",
+    "restart": "pm2 restart uni-v2 uni-v3 uni-v4 pancake pancake-v3",
+    "stop": "pm2 stop  uni-v2 uni-v3 uni-v4 pancake pancake-v3",
+    "lint": "eslint src/** --fix",
+    "check:public": "node scripts/check-public-repo.js",
+    "release:public:prepare": "node scripts/prepare-public-release.js",
+    "release:public:publish": "node scripts/publish-public-release.js",
+    "test": "npm run test:v4-calldata && npm run test:pancake-v4-calldata && npm run test:pancake-v4-http-contract",
+    "test:v4-calldata": "node test/uni-v4-calldata.test.js",
+    "test:pancake-v4-calldata": "node test/pancake-v4-calldata.test.js",
+    "test:pancake-v4-http-contract": "node test/pancake-v4-http-contract.test.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "fmt": "npm run format"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "description": "Local Uniswap and PancakeSwap bot services for swap execution and gas estimation.",
+  "dependencies": {
+    "@pancakeswap/sdk": "^5.8.18",
+    "@pancakeswap/v4-sdk": "^0.1.8",
+    "@uniswap/sdk-core": "^7.10.1",
+    "@uniswap/universal-router-sdk": "^4.30.0",
+    "@uniswap/v4-sdk": "^1.27.0",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.19.0",
+    "prettier": "^3.4.2"
+  }
+}
