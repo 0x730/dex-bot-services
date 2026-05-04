@@ -1,0 +1,72 @@
+[
+  {
+    "inputs": [
+      { "internalType": "address", "name": "factory", "type": "address" },
+      { "internalType": "address", "name": "WETH", "type": "address" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "name": "swapExactETHForTokensSupportingFeeOnTransferTokens",
+    "type": "function",
+    "inputs": [
+      { "name": "amountOutMin", "type": "uint256" },
+      { "name": "path", "type": "address[]" },
+      { "name": "to", "type": "address" },
+      { "name": "deadline", "type": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "name": "swapExactTokensForETHSupportingFeeOnTransferTokens",
+    "type": "function",
+    "inputs": [
+      { "name": "amountIn", "type": "uint256" },
+      { "name": "amountOutMin", "type": "uint256" },
+      { "name": "path", "type": "address[]" },
+      { "name": "to", "type": "address" },
+      { "name": "deadline", "type": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "swapExactTokensForTokensSupportingFeeOnTransferTokens",
+    "type": "function",
+    "inputs": [
+      { "name": "amountIn", "type": "uint256" },
+      { "name": "amountOutMin", "type": "uint256" },
+      { "name": "path", "type": "address[]" },
+      { "name": "to", "type": "address" },
+      { "name": "deadline", "type": "uint256" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "getAmountsOut",
+    "type": "function",
+    "inputs": [
+      { "name": "amountIn", "type": "uint256" },
+      { "name": "path", "type": "address[]" }
+    ],
+    "outputs": [{ "name": "amounts", "type": "uint256[]" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "factory",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address" }],
+    "stateMutability": "view"
+  },
+  {
+    "name": "WETH",
+    "type": "function",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "address" }],
+    "stateMutability": "view"
+  }
+]
